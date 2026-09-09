@@ -17,7 +17,7 @@ Foley / van Dam, and Hearn & Baker.
 | Algorithm | Style | Notes |
 | --- | --- | --- |
 | **Cohen–Sutherland** | 4-bit outcodes + iterative edge clips | Fast trivial accept/reject |
-| **Liang–Barsky** | Parametric \(t\) vs four edges | Often fewer intersections |
+| **Liang–Barsky** | Parametric $t$ vs four edges | Often fewer intersections |
 | **Midpoint Subdivision** | Binary search along the segment | Classic textbook companion to CS |
 | **Skala (lite)** | Corner encoding vs supporting line | Educational approx.; rectangle only |
 | Cyrus–Beck | Parametric vs convex polygon | See sibling repo |
@@ -46,8 +46,8 @@ embedded compactly for comparison.
 | Window | `Make_Window`, `Is_Valid_Window`, `Point_Inside_Window` | Axis-aligned clip rectangle |
 | Dispatch | `Algorithm_Kind`, `Clip_With` | Choose CS / LB / Midpoint / Skala-lite |
 | Classic | `Cohen_Sutherland_Clip` | Embedded outcode loop |
-| Parametric | `Liang_Barsky_Clip` | Embedded \(t_{\mathrm{enter}}/t_{\mathrm{leave}}\) |
-| Subdivision | `Midpoint_Subdivision_Clip` | Recursive midpoint until \(\varepsilon\) |
+| Parametric | `Liang_Barsky_Clip` | Embedded $t_{\mathrm{enter}}/t_{\mathrm{leave}}$ |
+| Subdivision | `Midpoint_Subdivision_Clip` | Recursive midpoint until $\varepsilon$ |
 | Encoding | `Skala_Clip_Lite` | Skala-inspired corner/edge encoding (AA only) |
 | Compare | `Compare_Algorithms` | Agreement report (`Same_Clipped_Seg`) |
 | Helpers | `Make_Segment`, `Length`, `Same_Clipped_Segment` | Fixtures & comparison |
@@ -63,7 +63,7 @@ Named exceptions: `Invalid_Argument`, `Degenerate_Geometry`.
 ### Skala_Clip_Lite limits
 
 The lite variant documents Skala’s idea of classifying window corners against
-the supporting line \(ax+by+c=0\) and counting crossed edges, then clips the
+the supporting line $ax+by+c=0$ and counting crossed edges, then clips the
 segment against the rectangle with a parametric interval. It is **not** the
 full homogeneous / duality algorithm for arbitrary convex polygons.
 
